@@ -55,8 +55,6 @@ function log::success() {
   fi
 }
 
-a="$@"
-
 # black on gray
 readonly _DEBUG=${DEBUG-0}
 function log::debug() {
