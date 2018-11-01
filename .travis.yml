@@ -1,4 +1,6 @@
 language: shell
 sudo: false
+before_script:
+  - go get -u mvdan.cc/sh/cmd/shfmt
 script:
-  - bash -c 'shopt -s globstar; shellcheck **/*.sh'
+  - bash -c 'shopt -s globstar && shfmt -i2 -ci -d . && shellcheck **/*.sh'
