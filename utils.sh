@@ -64,7 +64,7 @@ function log::debug() {
     return
   fi
   if [[ $_OUTPUT_TYPE -eq 0 ]]; then
-      printf '%s [DEBUG] %s\n' "$(date +'%Y-%m-%dT%H:%M:%S%z')" "$*"
+    printf '%s [DEBUG] %s\n' "$(date +'%Y-%m-%dT%H:%M:%S%z')" "$*"
   else
     printf '\033[47;30m%s [DEBUG] %s\033[0m\n' "$(date +'%Y-%m-%dT%H:%M:%S%z')" "$*"
   fi
