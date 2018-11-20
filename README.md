@@ -4,15 +4,25 @@ Common utils for bash
 
 [![Build Status](https://travis-ci.org/beyondops/shell-utils.svg?branch=master)](https://travis-ci.org/beyondops/shell-utils)
 
+<!-- TOC -->
+
+- [shell-utils](#shell-utils)
+    - [Usage](#usage)
+    - [Modules](#modules)
+        - [Log](#log)
+        - [Timer](#timer)
+
+<!-- /TOC -->
+
 ## Usage
 
 ```bash
 #!/bin/bash
 set -eu
 readonly SBIN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SBIN"
 readonly DEBUG=1
-source "$SBIN/utils.sh"
-
+source ./utils.sh
 ```
 
 ## Modules
