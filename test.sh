@@ -1,8 +1,8 @@
 #!/bin/bash
 set -eu
-
+readonly SBIN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly DEBUG=1
-source ./utils.sh
+source "$SBIN/utils.sh"
 
 log::info info
 log::warn warn

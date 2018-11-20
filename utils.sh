@@ -79,14 +79,14 @@ _START_TIME=0
 _PRE_TIME=0
 
 # Init start time, print start information
-time::start() {
+function time::start() {
   _START_TIME=$(date +%s)
   _PRE_TIME=$_START_TIME
   log::info "[TIME] [start] $*"
 }
 
 # Caculate the interval, print the interval information
-time::_print_interval() {
+function time::_print_interval() {
   local interval_day=$(($1 / 24 / 3600))
   local interval_hour=$(($1 % (24 * 3600) / 3600))
   local interval_minute=$(($1 % 3600 / 60))
@@ -95,7 +95,7 @@ time::_print_interval() {
 }
 
 # Print step interval time
-time::step_time() {
+function time::step_time() {
   local time_current
   time_current=$(date +%s)
   log::info "[TIME] [step: $(time::_print_interval $((time_current - _PRE_TIME))), total: $(time::_print_interval $((time_current - _START_TIME)))] $*"
